@@ -1,13 +1,15 @@
 <template lang="html">
+<Page>
+    <Label Text="Lesson shop" class="h2"/>
+
+
     <BottomNavigation selectedIndex="0">
         <TabStrip class="bottom_navigation">
             <TabStripItem class="navigation__item">
                 <Label text="Checkout"></Label>
-                <Image src.decode="font://&#xf03d;" class="fas t-36"></Image>
             </TabStripItem>
             <TabStripItem class="navigation__item">
                 <Label text="LessonList"></Label>
-                <Image src.decode="font://&#xf124;" class="fas t-36"></Image>
             </TabStripItem>
         </TabStrip>
 
@@ -24,6 +26,7 @@
         </TabContentItem>
 
     </BottomNavigation>
+    </Page>
 </template>
 
 <script>
