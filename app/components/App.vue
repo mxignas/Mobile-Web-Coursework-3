@@ -2,22 +2,16 @@
 <Page>
     <Label Text="Lesson shop" class="h2"/>
 
-
     <BottomNavigation selectedIndex="0">
         <TabStrip class="bottom_navigation">
             <TabStripItem class="navigation__item">
-                <Label text="Checkout"></Label>
+                <Label text="LessonList"></Label>
+                <!-- <ProductList @addProduct="addToCart" /> -->
             </TabStripItem>
             <TabStripItem class="navigation__item">
-                <Label text="LessonList"></Label>
+                <Label text="Checkout"></Label>
             </TabStripItem>
         </TabStrip>
-
-        <TabContentItem>
-            <Frame id="Checkout">
-                <Checkout />
-            </Frame>
-        </TabContentItem>
 
         <TabContentItem>
             <Frame id="LessonList">
@@ -25,8 +19,14 @@
             </Frame>
         </TabContentItem>
 
+        <TabContentItem>
+            <Frame id="Checkout">
+                <Checkout />
+            </Frame>
+        </TabContentItem>
+
     </BottomNavigation>
-    </Page>
+</Page>
 </template>
 
 <script>
@@ -34,10 +34,21 @@
     import LessonList from "./LessonList.vue";
 
     export default {
-        components: {
-            Checkout,
-            LessonList
+        data () {
+            return {
+                components: {
+                    Checkout,
+                    LessonList
+                },
+                methods: {
+                    addToCart(product) {
+                        this.cart.push(product)
+                        alert("Added to cart: " + product.Title)
+                    }
+                }
+            }
         }
+        
     };
 </script>
 
