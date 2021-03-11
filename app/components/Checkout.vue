@@ -28,13 +28,7 @@ export default {
         onItemTap(event) {
         this.$emit("removeProduct", event.item);
         },
-        submitOrder() {
-            if((this.name || this.phoneNr) === "" || (this.name || this.phoneNr) === "undefined") {
-                alert("Please fill in the form")
-            }
-            else {
-                alert('An order is placed by ' + this.name)
-            }
+        submitOrder() 
             
 }
     },
