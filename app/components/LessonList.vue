@@ -2,6 +2,7 @@
     <Page>
         <ActionBar title="LessonList!"/>
     <ListView for="product in products" @itemTap="onItemTap" >
+        <!-- displaying items with v-template -->
         <v-template >
             <StackLayout>
                 <Label :text="`Lesson: ${product.Activity}`" class="ProductInfo"/>
@@ -20,6 +21,7 @@ export default {
     data() {
 
 	    return {
+            // my products
             products: [
                 { id: 1001, url: "~/assets/Math.png", Title: "Lessons", Activity: "Math", Location: "West End", Price: 100, Availability: 5 },
                 { id: 1002, url: "~/assets/Soccer.png", Title: "Sports", Activity: "Soccer", Location: "Hendon", Price: 50, Availability: 5 },
@@ -36,7 +38,7 @@ export default {
     },
     methods: {
         onItemTap(event) {
-            // this.event.Availability = this.event.Availability - 1; 
+            // passing event.item through addProduct
             this.$emit('AddProduct', event.item)
         }
     },

@@ -33,7 +33,9 @@
         },
         methods: {
             addToCart(product) {
+                // if product availability is more than zero
                 if(product.Availability > 0) {
+                    // everytime we add to cart, availability goes -1
                     product.Availability = product.Availability - 1;
                     this.cart.push(product)
                     alert("Added to cart: " + product.Activity +" " + product.Availability)

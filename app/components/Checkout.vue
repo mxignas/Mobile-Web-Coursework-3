@@ -3,6 +3,7 @@
         <StackLayout>
             <Label class="h2 text-center" text="Shopping Cart" />
             <Label class="h2 text-center" text="(Tap a product to remove it)" />
+            <!-- displaying cart -->
                 <ListView for="product in cart" @itemTap='onItemTap'>
                     <v-template>
                         <StackLayout>
@@ -29,6 +30,7 @@ export default {
         this.$emit("removeProduct", event.item);
         },
         submitOrder() {
+            // if textfields are empty
             if((this.name || this.phoneNr) === "" || (this.name || this.phoneNr) === "undefined") {
                 alert("Please fill in the form")
             }
