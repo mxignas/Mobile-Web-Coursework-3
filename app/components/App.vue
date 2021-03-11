@@ -38,9 +38,6 @@
                     this.cart.push(product)
                     alert("Added to cart: " + product.Activity +" " + product.Availability)
                 }
-                else {
-                    alert("No more available spaces")
-                }
                 
             },
             removeFromCart(product) {
