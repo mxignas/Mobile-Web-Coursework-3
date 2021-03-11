@@ -1,8 +1,8 @@
 <template>
     <Page>
         <ActionBar title="LessonList!"/>
-    <ListView for="product in products" @itemTap="onItemTap">
-        <v-template>
+    <ListView for="product in products" @itemTap="onItemTap" >
+        <v-template >
             <StackLayout>
                 <Label :text="`Lesson: ${product.Activity}`" class="ProductInfo"/>
                 <Label :text="`Location: ${product.Location}`" class="ProductInfo"/>

@@ -29,7 +29,13 @@ export default {
         this.$emit("removeProduct", event.item);
         },
         submitOrder() {
-            alert('An order is placed by ' + this.name + " at " + this.phoneNr)
+            if((this.name || this.phoneNr) === "" || (this.name || this.phoneNr) === "undefined") {
+                alert("Please fill in the form")
+            }
+            else {
+                alert('An order is placed by ' + this.name)
+            }
+            
 }
     },
     data() {

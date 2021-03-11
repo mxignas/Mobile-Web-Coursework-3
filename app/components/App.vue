@@ -33,9 +33,15 @@
         },
         methods: {
             addToCart(product) {
-                this.cart.push(product)
-                this.product.Availability--;
-                alert("Added to cart: " + product.Activity + product.Availability)
+                if(product.Availability > 0) {
+                    product.Availability = product.Availability - 1;
+                    this.cart.push(product)
+                    alert("Added to cart: " + product.Activity +" " + product.Availability)
+                }
+                else {
+                    alert("No more available spaces")
+                }
+                
             },
             removeFromCart(product) {
                 for (let i= 0; i < this.cart.length; i++) {
